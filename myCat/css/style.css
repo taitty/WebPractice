@@ -1,3 +1,5 @@
+@import "reset.css";
+
 .post-title {
     padding-bottom: 10px;
     background-image: linear-gradient(45deg, #fff 30%, #ccc 30%, #ccc 50%, #fff 50%, #fff 80%, #ccc 80%, #ccc 100%);
@@ -69,7 +71,109 @@ ol li::before {
     margin-right: 8px;
 }
 
+article blockquote {
+    position: relative;
+    padding: 1rem 3rem 1rem 3rem;
+    margin-bottom: 1rem;
+}
+article blockquote::before,
+article blockquote::after {
+    font-size: 6rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #ccc;
+    position: absolute;
+    line-height: 0;
+}
+article blockquote::before {
+    content: '\201C';
+    top: 2.5rem;
+    left: 0;
+}
+article blockquote::after {
+    content: '\201D';
+    bottom: .5rem;
+    right: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.pagination a:hover {
+    background: #93d8d0;
+    color: #fff;
+}
+
+.pagination a,
+.pagination .current {
+    border-radius: 50%;
+    padding-top: 4px;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 0 6px;
+    text-decoration: none;
+}
+
+.pagination .current {
+    background: #ccc;
+    color: #fff;
+}
+
+.side-box {
+    margin-bottom: 4rem;
+    border: 1px solid #ccc;
+    outline: 2px solid #ccc;
+    outline-offset: 4px;
+    border-radius: 6px;
+    padding: .875rem;
+    position: relative;
+}
+
+.side-box::before {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    background: #fff;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    color: #949087;
+    font-size: 1.5rem;
+    content: '\f1b0';
+}
+
 @media (min-width: 600px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+        padding: 1rem 2.5rem 2.5rem;
+    }
+
+    main {
+        width: 68%;
+        margin-bottom: 0;
+    }
+
+    main article {
+        flex: 1;
+    }
+
+    aside {
+        width: 26%;
+    }
+
     .post-img {
         width: 220px;
         height: 180px;
@@ -80,4 +184,56 @@ ol li::before {
         shape-outside: circle();
         float: left;
     }
+
+    .popular-posts {
+        position: sticky;
+        top: 1rem;
+    }
+}
+
+body {
+    color: #949087;
+    font-family: sans-serif;
+    background: #faf6ed url('../images/bg.png');
+}
+
+header {
+    max-width: 1000px;
+    margin: 2.5rem auto 0;
+    background: url('../images/header.svg') no-repeat center top/cover;
+    height: 170px;
+}
+
+footer {
+    background: #949087;
+    text-align: center;
+    padding: 3rem;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+footer li {
+    margin: 0 12px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #c7c3ba;
+}
+
+footer small {
+    color: #c7c3ba;
+    font-size: .875rem;
+}
+
+.post-title h2 {
+    position: sticky;
+    top: 0;
 }
